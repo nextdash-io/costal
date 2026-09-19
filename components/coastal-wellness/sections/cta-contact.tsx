@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Phone, Mail, MessageSquare, Star } from "lucide-react";
+import { Phone, Star } from "lucide-react";
 import { CWButton } from "@/components/coastal-wellness/button";
 import { site } from "@/lib/coastal-wellness/site";
 import { unsplash, CONTACT_PHOTO } from "@/lib/coastal-wellness/photos";
@@ -118,17 +118,6 @@ export function CWCtaContact() {
               <Phone className="h-4 w-4" />
               {site.phone}
             </CWButton>
-            <CWButton href={site.textHref} variant="outline-light">
-              <MessageSquare className="h-4 w-4" />
-              Text {site.text}
-            </CWButton>
-            <a
-              href={`mailto:${site.email}`}
-              className="cw-font-body inline-flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
-            >
-              <Mail className="h-4 w-4" />
-              {site.email}
-            </a>
           </div>
         </div>
       </div>
