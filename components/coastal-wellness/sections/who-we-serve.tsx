@@ -10,7 +10,7 @@ export function CWWhoWeServe() {
     >
       <div
         className="cw-blob absolute -bottom-32 -left-32 h-96 w-96"
-        style={{ background: "var(--cw-plum)", opacity: 0.4 }}
+        style={{ background: "var(--cw-teal-500)", opacity: 0.4 }}
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl">

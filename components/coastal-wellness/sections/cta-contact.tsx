@@ -12,7 +12,7 @@ export function CWCtaContact() {
     <section id="contact" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
       <div
         className="cw-grain relative overflow-hidden rounded-[2.5rem] px-8 py-16 sm:px-14"
-        style={{ background: "linear-gradient(150deg, var(--cw-teal-900), var(--cw-plum) 130%)" }}
+        style={{ background: "linear-gradient(150deg, var(--cw-teal-900), var(--cw-teal-600) 130%)" }}
       >
         <div
           className="cw-blob cw-float-slow absolute -right-20 -top-20 h-72 w-72"

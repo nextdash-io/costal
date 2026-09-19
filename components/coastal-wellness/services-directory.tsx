@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { serviceCategories } from "@/lib/coastal-wellness/services-data";
 
-const accents = ["var(--cw-teal-600)", "var(--cw-coral)", "var(--cw-amber)", "var(--cw-plum)"];
+const accents = ["var(--cw-teal-600)", "var(--cw-coral)", "var(--cw-amber)", "var(--cw-teal-500)"];
 
 export function ServicesDirectory() {
   const [activeId, setActiveId] = useState(serviceCategories[0].id);

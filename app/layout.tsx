@@ -1,23 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Fraunces } from "next/font/google";
 import "./globals.css";
 
-const display = Fraunces({
+// Loaded as a fallback for the brand display face (Ivar Display — see
+// theme.css) until licensed font files are supplied.
+const displayFallback = Fraunces({
   subsets: ["latin"],
-  variable: "--font-cw-display",
+  variable: "--font-fraunces-fallback",
   weight: "variable",
   axes: ["opsz", "SOFT"],
   style: ["normal", "italic"],
 });
 
-const body = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-cw-body",
-  weight: ["400", "500", "600", "700"],
-});
-
 export const viewport: Viewport = {
-  themeColor: "#0a3634",
+  themeColor: "#013126",
   width: "device-width",
   initialScale: 1,
 };
@@ -38,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`cw-root ${display.variable} ${body.variable} cw-font-body min-h-screen antialiased`}>
+      <body className={`cw-root ${displayFallback.variable} cw-font-body min-h-screen antialiased`}>
         {children}
       </body>
     </html>

@@ -86,7 +86,7 @@ export function CWLocations() {
 
           <div
             className="rounded-3xl p-7 text-white sm:col-span-2"
-            style={{ background: "linear-gradient(155deg, var(--cw-teal-900), var(--cw-plum) 130%)" }}
+            style={{ background: "linear-gradient(155deg, var(--cw-teal-900), var(--cw-teal-600) 130%)" }}
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15">
               <Video className="h-6 w-6" />

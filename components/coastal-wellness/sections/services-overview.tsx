@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { CWButton } from "@/components/coastal-wellness/button";
 import { serviceCategories } from "@/lib/coastal-wellness/services-data";
 
-const accents = ["var(--cw-teal-600)", "var(--cw-coral)", "var(--cw-amber)", "var(--cw-plum)"];
+const accents = ["var(--cw-teal-600)", "var(--cw-coral)", "var(--cw-amber)", "var(--cw-teal-500)"];
 
 export function CWServicesOverview() {
   const concerns = serviceCategories.find((c) => c.id === "concerns")!;

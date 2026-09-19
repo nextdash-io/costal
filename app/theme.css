@@ -1,34 +1,75 @@
 /* Coastal Wellness — design system tokens, scoped under .cw-root. */
 
+/* Drop the licensed woff2 files into /public/fonts and uncomment to
+   activate the real brand typefaces (Helvetica Now Display, Ivar Display).
+   Until then, --font-cw-display / --font-cw-body fall back to Fraunces /
+   system Helvetica, defined below. */
+/*
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("/fonts/HelveticaNowDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("/fonts/HelveticaNowDisplay-Medium.woff2") format("woff2");
+  font-weight: 500 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ivar Display";
+  src: url("/fonts/IvarDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ivar Display";
+  src: url("/fonts/IvarDisplay-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+*/
+
 .cw-root {
-  --cw-ink: #0d2b2b;
-  --cw-ink-soft: #1c4442;
-  --cw-teal-900: #0a3634;
-  --cw-teal-700: #0f6e64;
-  --cw-teal-600: #128b7e;
-  --cw-teal-500: #17a696;
-  --cw-turquoise: #3fd1bf;
-  --cw-turquoise-soft: #b9ece2;
-  --cw-coral: #e15b3a;
-  --cw-coral-dark: #c14127;
-  --cw-coral-soft: #f6b79b;
+  /* Brand colors, exact client values. */
+  --cw-teal-500: #38b2bc; /* primary */
+  --cw-teal-900: #013126; /* secondary (deep green-teal) */
+
+  --cw-ink: #013126;
+  --cw-ink-soft: #2c4f48;
+  --cw-teal-700: #257983;
+  --cw-teal-600: #2f97a1;
+  --cw-turquoise: #38b2bc;
+  --cw-turquoise-soft: #bfe6e9;
+  --cw-coral: #e1704a;
+  --cw-coral-dark: #c1552f;
+  --cw-coral-soft: #f6c2a8;
   --cw-amber: #e2a53f;
-  --cw-plum: #5a3556;
-  --cw-plum-soft: #cbb0c8;
-  --cw-mist: #eef5f3;
-  --cw-paper: #fbfaf7;
-  --cw-line: rgba(13, 43, 43, 0.12);
+  --cw-mist: #e9f6f7;
+  --cw-paper: #fbfdfd;
+  --cw-line: rgba(1, 49, 38, 0.14);
+
+  /* Brand fonts. These are commercial fonts (Monotype / Kontrapunkt) — not
+     on Google Fonts, so they resolve to the fallbacks below until real
+     licensed font files are added (see /public/fonts + @font-face). */
+  --font-cw-display: "Ivar Display", var(--font-fraunces-fallback), Georgia, serif;
+  --font-cw-body: "Helvetica Now Display", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   background-color: var(--cw-paper);
   color: var(--cw-ink);
 }
 
 .cw-font-display {
-  font-family: var(--font-cw-display), Georgia, serif;
+  font-family: var(--font-cw-display);
 }
 
 .cw-font-body {
-  font-family: var(--font-cw-body), system-ui, sans-serif;
+  font-family: var(--font-cw-body);
 }
 
 .cw-grain {
