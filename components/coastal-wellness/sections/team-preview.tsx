@@ -2,7 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { CWButton } from "@/components/coastal-wellness/button";
 import { clinicians } from "@/lib/coastal-wellness/team-data";
-import { unsplash } from "@/lib/coastal-wellness/photos";
+import { staffPhoto } from "@/lib/coastal-wellness/photos";
 
 export function CWTeamPreview() {
   const featured = clinicians.slice(0, 6);
@@ -41,10 +41,9 @@ export function CWTeamPreview() {
           >
             <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
               <Image
-                src={unsplash(c.photo, "w=200&q=80&auto=format&fit=crop&crop=faces")}
+                src={staffPhoto(c.photo)}
                 alt={c.name}
                 fill
-                unoptimized
                 sizes="64px"
                 className="object-cover object-top"
               />

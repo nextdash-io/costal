@@ -1,9 +1,8 @@
-// Real roster from coastalwellness.net/meet-our-team.
-//
-// Bios, credentials, insurance panels, offices, days and availability are the
-// practice's own. Only the portraits are placeholders: `photo` is an Unsplash
-// photo id (resolved via `unsplash()`) standing in for each person's real
-// headshot, which the WordPress developer should swap in at handoff.
+// Real roster from coastalwellness.net/meet-our-team — bios, credentials,
+// insurance panels, offices, days, availability and headshots are all the
+// practice's own. `photo` is the image's filename on their CDN, resolved via
+// `staffPhoto()`; at handoff these should be re-uploaded to the new host
+// rather than hotlinked from the old site.
 
 export type Population =
   | "Children"
@@ -32,6 +31,7 @@ export type Clinician = {
   /** Trainings, certifications and modalities — shown when the bio is open. */
   modalities: string[];
   bio: string;
+  /** Headshot filename on the practice's CDN — see `staffPhoto()`. */
   photo: string;
 };
 
@@ -59,7 +59,7 @@ export const clinicians: Clinician[] = [
       "NERPSC Certified",
     ],
     bio: "Neeley founded Coastal Wellness after a 16-year career with the Department of Defense and brings more than 25 years of clinical experience to her work with military members, veterans and first responders. Licensed in both Florida and Virginia, she specializes in PTSD and complex PTSD, and offers EMDR Intensives alongside weekly sessions. She is also an EMDRIA Approved Consultant, supervising and certifying other clinicians in EMDR.",
-    photo: "1573497019940-1c28c88b4f3e",
+    photo: "9A1000E5-D0B4-4DAF-91E7-DD39E0B0E989-1920w.png",
   },
   {
     id: "erin-arbour",
@@ -75,7 +75,7 @@ export const clinicians: Clinician[] = [
     focus: ["Trauma & PTSD", "Addiction", "Anxiety", "Depression"],
     modalities: ["EMDRIA Approved EMDR", "Gottman Levels 1 & 2"],
     bio: "With more than six years in the field, Erin works with teens, adults and couples on trauma, PTSD, addiction, anxiety and depression. She is trained in Gottman Levels 1 and 2 for couples work and uses EMDR for trauma processing.",
-    photo: "1438761681033-6461ffad8d80",
+    photo: "coastal-wellness-and-life-coaching-center-erin-arbour-01-1920w.jpg",
   },
   {
     id: "lisa-arnabat",
@@ -96,7 +96,7 @@ export const clinicians: Clinician[] = [
       "Nutritional Coaching",
     ],
     bio: "Lisa has 15 years of experience and works with adolescents and adults around eating disorders, self-harm and trauma. A Certified Clinical Trauma Professional trained in IFS and ART, she also integrates nutritional coaching into her work.",
-    photo: "1588516903720-8ceb67f9ef84",
+    photo: "coastal-wellness-and-life-coaching-center-lisa-arnabat-1920w.jpg",
   },
   {
     id: "trish-bruner",
@@ -120,7 +120,7 @@ export const clinicians: Clinician[] = [
       "EMDR",
     ],
     bio: "Trish brings over nine years of work with children, teens and families, as well as women 18 and older. She draws on play therapy, CBT, family systems, attachment and narrative approaches, and EMDR, and sees clients in English and Portuguese.",
-    photo: "1619895862022-09114b41f16f",
+    photo: "coastal-wellness-and-life-coaching-center-trish-bruner-1920w.jpg",
   },
   {
     id: "angela-bryan",
@@ -145,7 +145,7 @@ export const clinicians: Clinician[] = [
       "IFS",
     ],
     bio: "Angela has more than 20 years of experience treating complex trauma in children, teens and adults. She is TBRI-trained and works across EMDR, TF-CBT, DBT, art therapy and somatic and polyvagal-informed approaches, in English, Spanish and German.",
-    photo: "1508214751196-bcfd4ca60f91",
+    photo: "coastal-wellness-and-life-coaching-center-angela-bryan-1920w.jpg",
   },
   {
     id: "dana-chesser",
@@ -162,7 +162,7 @@ export const clinicians: Clinician[] = [
     focus: ["Anxiety", "Life Transitions", "Family Conflict"],
     modalities: ["CBT"],
     bio: "Dana spent more than 20 years as an educator before moving into counseling, and now works with teens, adults, couples and families using CBT. As a pre-licensed counselor she offers discounted self-pay rates.",
-    photo: "1594744803329-e58b31de8bf5",
+    photo: "coastal-wellness-and-life-coaching-center-dana-chesser-1920w.jpg",
   },
   {
     id: "colleen-easterlin",
@@ -178,7 +178,7 @@ export const clinicians: Clinician[] = [
     focus: ["Couples & Marriage", "Communication", "Connection"],
     modalities: ["Gottman Level 2", "Emotionally Focused Therapy"],
     bio: "Colleen is a licensed marriage and family therapist with more than 16 years of experience. She works with adults and couples using Gottman Level 2 training and Emotionally Focused Therapy.",
-    photo: "1581065178047-8ee15951ede6",
+    photo: "coastal-wellness-and-life-coaching-center-colleen-easterlin-02-1920w.jpg",
   },
   {
     id: "corinne-edwards",
@@ -200,7 +200,7 @@ export const clinicians: Clinician[] = [
       "Play Therapy",
     ],
     bio: "Corinne works with children from age four through young adulthood, as well as families and parents. She blends CBT, DBT and Choice Theory with expressive arts and play therapy to meet each client where they are.",
-    photo: "1494790108377-be9c29b29330",
+    photo: "corinne-edwards-coastal-wellness-and-life-coaching-center-1920w.jpg",
   },
   {
     id: "kelly-hendricks",
@@ -220,7 +220,7 @@ export const clinicians: Clinician[] = [
       "Emotionally Focused Therapy",
     ],
     bio: "Kelly has worked in the field since 2010 and focuses on couples — including infidelity recovery and premarital counseling. She is a Prepare-Enrich facilitator with Gottman Level 2 and EFT training.",
-    photo: "1598550874175-4d0ef436c909",
+    photo: "coastal-wellness-and-life-coaching-center-kelly-hendricks-1920w.jpg",
   },
   {
     id: "taylor-kilpatrick",
@@ -241,7 +241,7 @@ export const clinicians: Clinician[] = [
       "Motivational Interviewing",
     ],
     bio: "Taylor brings more than five years of experience with substance use, medical trauma and chronic illness. They work with adolescents from age 13, adults and couples using CBT, DBT, motivational interviewing and EMDR.",
-    photo: "1573496799652-408c2ac9fe98",
+    photo: "coastal-wellness-and-life-coaching-center-taylor-kilpatrick-1920w.jpg",
   },
   {
     id: "jackie-marinaro",
@@ -257,7 +257,7 @@ export const clinicians: Clinician[] = [
     focus: ["PTSD & C-PTSD", "OCD", "Grief", "Sexual Assault"],
     modalities: ["Certified Clinical Hypnotherapist"],
     bio: "Jackie has more than 15 years of experience with PTSD and complex PTSD, anxiety, depression, OCD, grief and sexual assault recovery. She is also a Certified Clinical Hypnotherapist and sees adolescents from age 12, adults and couples.",
-    photo: "1573496359142-b8d87734a5a2",
+    photo: "jackie-marinaro-coastal-wellness-and-life-coaching-center-1920w.jpg",
   },
   {
     id: "miranda-moses",
@@ -274,7 +274,7 @@ export const clinicians: Clinician[] = [
     focus: ["Trauma", "Grief", "Codependency", "Intimate Partner Violence"],
     modalities: ["EMDRIA Certified EMDR", "TF-CBT", "IFS"],
     bio: "Miranda is a senior therapist with 12 years of experience working with adults on depression, anxiety, trauma, grief, codependency and intimate partner violence. She is EMDRIA Certified and also draws on TF-CBT and Internal Family Systems.",
-    photo: "1607746882042-944635dfe10e",
+    photo: "coastal-wellness-and-life-coaching-center-miranda-moses-1920w.jpg",
   },
   {
     id: "mary-paisley",
@@ -297,7 +297,7 @@ export const clinicians: Clinician[] = [
       "Gottman Method",
     ],
     bio: "Mary works with adults on anxiety, trauma and grief, and with couples using the Gottman Method. She is EMDRIA Certified and an EMDR Consultant in Training, and integrates ACT, DBT and CBT into her practice.",
-    photo: "1567532939604-b6b5b0db2604",
+    photo: "mary-paisley-coastal-wellness-and-life-coaching-center-1920w.jpg",
   },
   {
     id: "evan-rojas",
@@ -320,7 +320,7 @@ export const clinicians: Clinician[] = [
       "Gottman Level 2",
     ],
     bio: "Evan is a Nationally Certified Counselor with nine years of experience across criminal justice settings, veteran care and dual diagnosis. He sees teens, adults, couples and families by telehealth only, working from motivational interviewing, CBT, ACT, mindfulness and EMDR.",
-    photo: "1507003211169-0a1dd7228f2d",
+    photo: "coastal-wellness-and-life-coaching-center-evan-rojas-1920w.jpg",
   },
   {
     id: "tara-roberts-tiflati",
@@ -336,7 +336,7 @@ export const clinicians: Clinician[] = [
     focus: ["Anxiety", "Depression", "Self-Esteem", "Life Transitions"],
     modalities: ["CBT", "Solution-Focused Therapy", "Mindfulness"],
     bio: "Tara spent seven years in school settings before moving into private practice, and works with teens and adults on anxiety, depression, self-esteem and life transitions using CBT, solution-focused therapy and mindfulness.",
-    photo: "1489424731084-a5d8b219a5bb",
+    photo: "coastal-wellness-and-life-coaching-center-tara-roberts-tiflati-1920w.jpg",
   },
   {
     id: "sarah-stupp",
@@ -357,7 +357,7 @@ export const clinicians: Clinician[] = [
       "Non-Monogamy Affirming",
     ],
     bio: "Sarah worked for 11 years in hospitals and emergency medicine before moving into therapy. Her practice is queer, gender-affirming and kink-informed, and she works with non-monogamous and queer couples as well as adolescents and adults on PTSD, complex PTSD, anxiety and depression.",
-    photo: "1531123897727-8f129e1688ce",
+    photo: "coastal-wellness-and-life-coaching-center-sarah-stupp-1920w.jpg",
   },
   {
     id: "ariel-wilson",
@@ -380,7 +380,7 @@ export const clinicians: Clinician[] = [
       "Gottman Method",
     ],
     bio: "Ariel has practiced since 2014 and works with adults and couples on substance use, trauma, relationships and parenting. She is EMDRIA Certified and also draws on IFS, TF-CBT, DBT, EFCT and the Gottman Method.",
-    photo: "1580489944761-15a19d654956",
+    photo: "coastal-wellness-and-life-coaching-center-ariel-wilson-1920w.jpg",
   },
   {
     id: "garrett-works",
@@ -402,7 +402,7 @@ export const clinicians: Clinician[] = [
       "Person-Centered",
     ],
     bio: "Garrett is a PESI-certified Neurodiversity Specialist working with teens and adults on anxiety, depression, ADHD, burnout and self-esteem. His approach combines CBT, DBT, IFS and person-centered therapy.",
-    photo: "1552374196-c4e7ffc6e126",
+    photo: "garrett-works-coastal-wellness-and-life-coaching-1920w.png",
   },
 ];
 
@@ -418,30 +418,30 @@ export const officeStaff: StaffMember[] = [
     id: "krys-maciorowski",
     name: "Krys Maciorowski",
     role: "Office Manager",
-    photo: "1573497161161-c3e73707e25c",
+    photo: "krys-maciorowski-coastal-wellness-and-life-1920w.jpg",
   },
   {
     id: "jen-strait",
     name: "Jen Strait",
     role: "Assistant Office Manager",
-    photo: "1544725176-7c40e5a71c5e",
+    photo: "jen-strait-coastal-wellness-and-life-1920w.jpg",
   },
   {
     id: "sheila-orbe",
     name: "Sheila Orbe",
     role: "Office Assistant",
-    photo: "1592621385612-4d7129426394",
+    photo: "sheila-orbe-coastal-wellness-and-life-1920w.jpg",
   },
   {
     id: "shen-calape",
     name: "Shen Calape",
     role: "Office Assistant",
-    photo: "1547425260-76bcadfb4f2c",
+    photo: "shen-calape-coastal-wellness-and-life-coaching-c187aa10-1920w.png",
   },
   {
     id: "toni-burak",
     name: "Toni Burak",
     role: "Office Assistant",
-    photo: "1551836022-d5d88e9218df",
+    photo: "toni-burak-coastal-wellness-and-life-1920w.jpg",
   },
 ];

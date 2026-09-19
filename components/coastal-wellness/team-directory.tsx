@@ -16,7 +16,7 @@ import {
   type Clinician,
   type Population,
 } from "@/lib/coastal-wellness/team-data";
-import { unsplash } from "@/lib/coastal-wellness/photos";
+import { staffPhoto } from "@/lib/coastal-wellness/photos";
 import { CWButton } from "@/components/coastal-wellness/button";
 import { site } from "@/lib/coastal-wellness/site";
 
@@ -84,12 +84,11 @@ function ClinicianCard({ c }: { c: Clinician }) {
       className="group flex flex-col overflow-hidden rounded-[1.5rem] border bg-white transition-shadow duration-300 hover:shadow-[0_24px_50px_-28px_rgba(1,49,38,0.4)]"
       style={{ borderColor: "var(--cw-line)" }}
     >
-      <div className="relative aspect-[5/4] overflow-hidden">
+      <div className="relative aspect-square overflow-hidden">
         <Image
-          src={unsplash(c.photo, "w=700&q=80&auto=format&fit=crop&crop=faces")}
+          src={staffPhoto(c.photo)}
           alt={c.name}
           fill
-          unoptimized
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]"
         />
@@ -295,10 +294,9 @@ export function TeamDirectory() {
             <div key={s.id} className="text-center sm:text-left">
               <div className="relative aspect-square overflow-hidden rounded-[1.25rem]">
                 <Image
-                  src={unsplash(s.photo, "w=400&q=80&auto=format&fit=crop&crop=faces")}
+                  src={staffPhoto(s.photo)}
                   alt={s.name}
                   fill
-                  unoptimized
                   sizes="(min-width: 1024px) 18vw, (min-width: 640px) 30vw, 100vw"
                   className="object-cover object-top"
                 />
