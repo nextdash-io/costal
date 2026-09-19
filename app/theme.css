@@ -1,0 +1,77 @@
+/* Coastal Wellness — design system tokens, scoped under .cw-root. */
+
+.cw-root {
+  --cw-ink: #0d2b2b;
+  --cw-ink-soft: #1c4442;
+  --cw-teal-900: #0a3634;
+  --cw-teal-700: #0f6e64;
+  --cw-teal-600: #128b7e;
+  --cw-teal-500: #17a696;
+  --cw-turquoise: #3fd1bf;
+  --cw-turquoise-soft: #b9ece2;
+  --cw-coral: #e15b3a;
+  --cw-coral-dark: #c14127;
+  --cw-coral-soft: #f6b79b;
+  --cw-amber: #e2a53f;
+  --cw-plum: #5a3556;
+  --cw-plum-soft: #cbb0c8;
+  --cw-mist: #eef5f3;
+  --cw-paper: #fbfaf7;
+  --cw-line: rgba(13, 43, 43, 0.12);
+
+  background-color: var(--cw-paper);
+  color: var(--cw-ink);
+}
+
+.cw-font-display {
+  font-family: var(--font-cw-display), Georgia, serif;
+}
+
+.cw-font-body {
+  font-family: var(--font-cw-body), system-ui, sans-serif;
+}
+
+.cw-grain {
+  position: relative;
+}
+
+.cw-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.cw-blob {
+  border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+}
+
+.cw-blob-2 {
+  border-radius: 63% 37% 39% 61% / 52% 40% 60% 48%;
+}
+
+@keyframes cw-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(2deg); }
+}
+
+.cw-float {
+  animation: cw-float 7s ease-in-out infinite;
+}
+
+.cw-float-slow {
+  animation: cw-float 11s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes cw-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.cw-marquee {
+  animation: cw-marquee 32s linear infinite;
+}
