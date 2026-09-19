@@ -10,7 +10,7 @@ export function CWTeamPreview() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-        <div className="max-w-xl">
+        <div className="max-w-2xl">
           <p
             className="cw-font-body text-xs uppercase tracking-[0.2em]"
             style={{ color: "var(--cw-teal-600)" }}

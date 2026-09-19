@@ -57,8 +57,10 @@
   /* Brand fonts. These are commercial fonts (Monotype / Kontrapunkt) — not
      on Google Fonts, so they resolve to the fallbacks below until real
      licensed font files are added (see /public/fonts + @font-face). */
-  --font-cw-display: "Ivar Display", var(--font-hanken), -apple-system, sans-serif;
+  --font-cw-display: "Helvetica Now Display", var(--font-hanken), -apple-system, sans-serif;
   --font-cw-body: "Helvetica Now Display", var(--font-hanken), -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Secondary display face — the italic serif inside headings. */
+  --font-cw-serif: "Ivar Display", var(--font-instrument), Georgia, "Times New Roman", serif;
 
   background-color: var(--cw-paper);
   color: var(--cw-ink);
@@ -74,6 +76,19 @@
 
 .cw-font-body {
   font-family: var(--font-cw-body);
+}
+
+/* Headings pair the grotesk with an italic serif: any italic inside a display
+   heading switches face. Slightly up-sized and re-tracked because the serif
+   sets smaller and tighter than the sans at the same font-size. */
+.cw-font-display .italic,
+.cw-font-display em,
+.cw-font-serif {
+  font-family: var(--font-cw-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.06em;
+  letter-spacing: -0.005em;
 }
 
 .cw-grain {
