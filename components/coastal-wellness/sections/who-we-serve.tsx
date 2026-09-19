@@ -14,7 +14,7 @@ export function CWWhoWeServe() {
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-xl">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-turquoise)" }}>
+          <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-turquoise)" }}>
             Who We Serve
           </span>
           <h2 className="cw-font-display mt-3 text-4xl text-white sm:text-5xl">

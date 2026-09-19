@@ -20,7 +20,7 @@ export function CWCtaContact() {
         />
         <div className="relative">
           <div className="max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-turquoise)" }}>
+            <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-turquoise)" }}>
               Get Started
             </span>
             <h2 className="cw-font-display mt-3 text-4xl text-white sm:text-5xl">
@@ -49,7 +49,7 @@ export function CWCtaContact() {
               <Mail className="h-4 w-4" />
               hello@coastalwellness.net
             </CWButton>
-            <span className="ml-auto inline-flex items-center gap-1.5 text-sm font-semibold text-white/70">
+            <span className="ml-auto inline-flex items-center gap-1.5 text-sm font-medium text-white/70">
               or explore our clinicians
               <a href="/team" className="inline-flex items-center gap-1 text-white hover:underline">
                 Meet the Team <ArrowUpRight className="h-3.5 w-3.5" />

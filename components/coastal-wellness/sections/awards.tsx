@@ -21,7 +21,7 @@ export function CWAwards() {
         {doubled.map((badge, i) => (
           <div key={i} className="flex items-center gap-2.5 whitespace-nowrap">
             <Star className="h-4 w-4 shrink-0" style={{ color: "var(--cw-amber)" }} />
-            <span className="text-sm font-semibold" style={{ color: "var(--cw-ink-soft)" }}>
+            <span className="text-sm font-medium" style={{ color: "var(--cw-ink-soft)" }}>
               {badge}
             </span>
           </div>

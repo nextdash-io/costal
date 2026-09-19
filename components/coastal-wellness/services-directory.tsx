@@ -19,7 +19,7 @@ export function ServicesDirectory() {
               key={cat.id}
               id={cat.id}
               onClick={() => setActiveId(cat.id)}
-              className="scroll-mt-24 rounded-full border px-5 py-2.5 text-sm font-semibold transition-colors"
+              className="scroll-mt-24 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors"
               style={
                 isActive
                   ? { backgroundColor: "var(--cw-teal-700)", borderColor: "var(--cw-teal-700)", color: "#fff" }

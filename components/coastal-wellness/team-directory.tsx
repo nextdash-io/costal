@@ -38,7 +38,7 @@ export function TeamDirectory() {
             <button
               key={f}
               onClick={() => setActive(f)}
-              className="rounded-full border px-4 py-2 text-sm font-semibold transition-colors"
+              className="rounded-full border px-4 py-2 text-sm font-medium transition-colors"
               style={
                 isActive
                   ? { backgroundColor: "var(--cw-teal-700)", borderColor: "var(--cw-teal-700)", color: "#fff" }
@@ -77,7 +77,7 @@ export function TeamDirectory() {
                   <h3 className="cw-font-display text-lg leading-tight" style={{ color: "var(--cw-ink)" }}>
                     {c.name}
                   </h3>
-                  <p className="mt-0.5 text-xs font-bold" style={{ color: "var(--cw-teal-700)" }}>
+                  <p className="mt-0.5 text-xs font-medium" style={{ color: "var(--cw-teal-700)" }}>
                     {c.credentials}
                   </p>
                   <p className="mt-1.5 flex items-center gap-1 text-xs" style={{ color: "var(--cw-ink-soft)" }}>
@@ -91,7 +91,7 @@ export function TeamDirectory() {
                 {c.specialties.slice(0, 2).map((s) => (
                   <span
                     key={s}
-                    className="rounded-full px-2.5 py-1 text-[0.7rem] font-semibold"
+                    className="rounded-full px-2.5 py-1 text-[0.7rem] font-medium"
                     style={{ backgroundColor: "var(--cw-mist)", color: "var(--cw-teal-700)" }}
                   >
                     {s}
@@ -101,7 +101,7 @@ export function TeamDirectory() {
 
               <button
                 onClick={() => setOpenId(isOpen ? null : c.id)}
-                className="mt-4 flex w-full items-center justify-between border-t pt-3 text-sm font-semibold"
+                className="mt-4 flex w-full items-center justify-between border-t pt-3 text-sm font-medium"
                 style={{ borderColor: "var(--cw-line)", color: "var(--cw-coral)" }}
               >
                 {isOpen ? "Hide bio" : "Read bio"}

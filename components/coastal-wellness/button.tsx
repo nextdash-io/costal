@@ -19,11 +19,11 @@ type AsButton = Common &
   };
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 whitespace-nowrap";
+  "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 whitespace-nowrap";
 
 const sizes = {
-  md: "h-11 px-6 text-sm",
-  lg: "h-13 px-8 text-base",
+  md: "h-11 px-5 text-sm",
+  lg: "h-14 px-7 text-base",
 };
 
 const variants = {

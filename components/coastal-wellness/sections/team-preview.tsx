@@ -11,7 +11,7 @@ export function CWTeamPreview() {
     <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <div className="max-w-xl">
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
+          <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
             Meet Our Team
           </span>
           <h2 className="cw-font-display mt-3 text-4xl sm:text-5xl" style={{ color: "var(--cw-ink)" }}>
@@ -43,7 +43,7 @@ export function CWTeamPreview() {
               <p className="cw-font-display truncate text-lg" style={{ color: "var(--cw-ink)" }}>
                 {c.name}
               </p>
-              <p className="text-xs font-semibold" style={{ color: "var(--cw-teal-700)" }}>
+              <p className="text-xs font-medium" style={{ color: "var(--cw-teal-700)" }}>
                 {c.credentials}
               </p>
               <p className="mt-1 truncate text-xs" style={{ color: "var(--cw-ink-soft)" }}>

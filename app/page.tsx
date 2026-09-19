@@ -13,7 +13,7 @@ import { CWCtaContact } from "@/components/coastal-wellness/sections/cta-contact
 export default function CoastalWellnessHomePage() {
   return (
     <>
-      <CWNavbar overlay />
+      <CWNavbar />
       <main>
         <CWHero />
         <CWIntro />

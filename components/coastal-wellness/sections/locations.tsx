@@ -21,7 +21,7 @@ export function CWLocations() {
   return (
     <section id="locations" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
       <div className="max-w-xl">
-        <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
+        <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
           Locations & Telehealth
         </span>
         <h2 className="cw-font-display mt-3 text-4xl sm:text-5xl" style={{ color: "var(--cw-ink)" }}>
@@ -75,7 +75,7 @@ export function CWLocations() {
                 href={`https://www.google.com/maps/search/${encodeURIComponent(office.mapQuery)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold"
+                className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium"
                 style={{ color: "var(--cw-coral)" }}
               >
                 Get Directions

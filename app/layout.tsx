@@ -1,14 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
-// Loaded as a fallback for the brand display face (Ivar Display — see
-// theme.css) until licensed font files are supplied.
-const displayFallback = Fraunces({
+// Stands in for the licensed brand faces (Helvetica Now Display / Ivar
+// Display — see theme.css) until their font files are supplied.
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-fraunces-fallback",
+  variable: "--font-hanken",
   weight: "variable",
-  axes: ["opsz", "SOFT"],
   style: ["normal", "italic"],
 });
 
@@ -34,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`cw-root ${displayFallback.variable} cw-font-body min-h-screen antialiased`}>
+      <body className={`cw-root ${hanken.variable} cw-font-body min-h-screen antialiased`}>
         {children}
       </body>
     </html>

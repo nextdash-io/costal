@@ -21,7 +21,7 @@ export function CWInsurance() {
     <section id="insurance" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
       <div className="grid gap-12 rounded-[2.5rem] border p-8 sm:p-12 lg:grid-cols-2" style={{ borderColor: "var(--cw-line)", backgroundColor: "var(--cw-mist)" }}>
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
+          <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
             Insurance & Payment
           </span>
           <h2 className="cw-font-display mt-3 text-3xl sm:text-4xl" style={{ color: "var(--cw-ink)" }}>
@@ -36,7 +36,7 @@ export function CWInsurance() {
             {insurers.map((name) => (
               <span
                 key={name}
-                className="rounded-full border bg-white px-4 py-2 text-sm font-semibold"
+                className="rounded-full border bg-white px-4 py-2 text-sm font-medium"
                 style={{ borderColor: "var(--cw-line)", color: "var(--cw-ink)" }}
               >
                 {name}

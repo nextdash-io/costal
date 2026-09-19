@@ -15,13 +15,13 @@ export default function TeamPage() {
     <>
       <CWNavbar />
       <main>
-        <section className="cw-grain relative overflow-hidden py-20">
+        <section className="cw-grain relative overflow-hidden pt-36 pb-20">
           <div
-            className="cw-blob cw-float-slow absolute -right-40 -top-40 h-[480px] w-[480px]"
-            style={{ background: "radial-gradient(circle at 30% 30%, var(--cw-turquoise), var(--cw-teal-700) 70%)", opacity: 0.85 }}
+            className="cw-blob cw-float-slow absolute -right-56 -top-56 h-[520px] w-[520px]"
+            style={{ background: "radial-gradient(circle at 30% 30%, var(--cw-turquoise), var(--cw-teal-700) 70%)", opacity: 0.32 }}
           />
           <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
+            <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
               Meet Our Team
             </span>
             <h1 className="cw-font-display mt-4 text-4xl sm:text-6xl" style={{ color: "var(--cw-ink)" }}>

@@ -15,13 +15,13 @@ export default function ServicesPage() {
     <>
       <CWNavbar />
       <main>
-        <section className="cw-grain relative overflow-hidden py-20">
+        <section className="cw-grain relative overflow-hidden pt-36 pb-20">
           <div
             className="cw-blob-2 cw-float absolute -left-32 -top-24 h-96 w-96"
             style={{ background: "var(--cw-coral-soft)", opacity: 0.5 }}
           />
           <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <span className="text-xs font-bold uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
+            <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
               Services & Specialties
             </span>
             <h1 className="cw-font-display mt-4 text-4xl sm:text-6xl" style={{ color: "var(--cw-ink)" }}>

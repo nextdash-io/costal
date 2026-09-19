@@ -57,15 +57,19 @@
   /* Brand fonts. These are commercial fonts (Monotype / Kontrapunkt) — not
      on Google Fonts, so they resolve to the fallbacks below until real
      licensed font files are added (see /public/fonts + @font-face). */
-  --font-cw-display: "Ivar Display", var(--font-fraunces-fallback), Georgia, serif;
-  --font-cw-body: "Helvetica Now Display", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-cw-display: "Ivar Display", var(--font-hanken), -apple-system, sans-serif;
+  --font-cw-body: "Helvetica Now Display", var(--font-hanken), -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   background-color: var(--cw-paper);
   color: var(--cw-ink);
+  font-weight: 400;
 }
 
+/* Display type stays light and open — never bold or heavy. */
 .cw-font-display {
   font-family: var(--font-cw-display);
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 .cw-font-body {

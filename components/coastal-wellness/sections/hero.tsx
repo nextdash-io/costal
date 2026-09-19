@@ -14,48 +14,45 @@ const stats = [
 
 export function CWHero() {
   return (
-    <section className="relative h-screen min-h-[640px] w-full overflow-hidden">
-      <Image
-        src={unsplash(HERO_PHOTO, "w=1920&q=80&auto=format&fit=crop")}
-        alt="A small group of friends laughing together"
-        fill
-        priority
-        unoptimized
-        className="object-cover"
-      />
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(100deg, rgba(1,49,38,0.90) 0%, rgba(1,49,38,0.62) 42%, rgba(1,49,38,0.2) 72%, rgba(1,49,38,0.08) 90%)",
-        }}
-      />
+    <section className="w-full p-3 sm:p-4" style={{ backgroundColor: "var(--cw-teal-900)" }}>
+      <div className="relative h-[calc(100svh-7rem)] min-h-[560px] overflow-hidden rounded-[1.75rem] sm:rounded-[2.5rem]">
+        <Image
+          src={unsplash(HERO_PHOTO, "w=1920&q=80&auto=format&fit=crop")}
+          alt="A small group of friends laughing together"
+          fill
+          priority
+          unoptimized
+          className="object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(85deg, rgba(1,49,38,0.7) 0%, rgba(1,49,38,0.34) 42%, rgba(1,49,38,0.06) 72%, rgba(1,49,38,0) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-1/2"
+          style={{ background: "linear-gradient(0deg, rgba(1,49,38,0.7) 0%, rgba(1,49,38,0) 100%)" }}
+        />
 
-      <div className="relative flex h-full flex-col justify-center px-6 pt-20 sm:px-14 lg:px-20">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="max-w-xl"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative flex h-full flex-col justify-end px-7 pb-12 sm:px-12 sm:pb-16 lg:px-16 lg:pb-20"
         >
-          <span className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
-            Brevard County · Two Locations + Telehealth
-          </span>
-
-          <h1 className="cw-font-display mt-7 text-[2.75rem] leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+          <h1 className="cw-font-display max-w-3xl text-[2.6rem] leading-[1.08] text-white sm:text-6xl lg:text-[4.5rem]">
             Real support, from{" "}
-            <span className="italic" style={{ color: "var(--cw-turquoise-soft)" }}>
-              people who get it.
-            </span>
+            <span className="italic">people who get it.</span>
           </h1>
 
-          <p className="cw-font-body mt-6 max-w-md text-lg leading-relaxed text-white/80">
-            A team of 17 licensed clinicians helping children, teens,
-            adults, couples and families move through anxiety, trauma and
-            everyday life — in person or wherever you are.
+          <p className="cw-font-body mt-5 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
+            Expert therapy for children, teens, adults, couples and families.
+            Two Brevard County locations, or wherever you are.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center gap-3">
             <CWButton href="/#contact" size="lg" variant="light">
               Request an Appointment
               <ArrowUpRight className="h-4 w-4" />
@@ -67,18 +64,15 @@ export function CWHero() {
         </motion.div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-[#013126]/60 backdrop-blur-md">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-white/10 px-6 sm:grid-cols-3 sm:divide-x sm:divide-y-0 sm:px-14 lg:px-20">
-          {stats.map(({ icon: Icon, value, label }) => (
-            <div key={label} className="flex items-center gap-3 py-4 sm:px-6 sm:py-5">
-              <Icon className="h-5 w-5 shrink-0 text-white/70" />
-              <div className="min-w-0">
-                <p className="cw-font-display text-lg leading-tight text-white">{value}</p>
-                <p className="cw-font-body text-xs leading-tight text-white/65">{label}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-8 px-4 py-5 sm:grid-cols-3 sm:py-6">
+        {stats.map(({ icon: Icon, value, label }) => (
+          <div key={label} className="flex items-center gap-3 py-1.5">
+            <Icon className="h-4 w-4 shrink-0" style={{ color: "var(--cw-turquoise)" }} />
+            <p className="cw-font-body text-sm text-white/70">
+              <span className="text-white">{value}</span> · {label}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
