@@ -19,11 +19,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Coastal Wellness | Therapy & Life Coaching in Brevard County, FL",
+    default: "Coastal Wellness & Life Coaching Center | Melbourne, FL",
     template: "%s | Coastal Wellness",
   },
   description:
-    "Coastal Wellness is a Brevard County group practice of 17 licensed clinicians providing therapy for children, teens, adults, couples and families — in person at two locations or by telehealth.",
+    "Professional counseling and life coaching in Melbourne, FL. Successfully treating anxiety, depression, trauma, PTSD and other life challenges. EMDR, child therapy and telehealth available.",
 };
 
 export default function RootLayout({

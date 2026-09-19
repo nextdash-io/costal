@@ -1,71 +1,138 @@
-"use client";
+import Image from "next/image";
+import { therapyCards, treats } from "@/lib/coastal-wellness/site";
+import { unsplash } from "@/lib/coastal-wellness/photos";
 
-import { useState } from "react";
-import { serviceCategories } from "@/lib/coastal-wellness/services-data";
-
-const accents = ["var(--cw-teal-600)", "var(--cw-coral)", "var(--cw-amber)", "var(--cw-teal-500)"];
+const supervision = [
+  {
+    title: "Clinical Supervision & Consultation",
+    body: "Supervision for registered interns and consultation for licensed clinicians who want a thoughtful second set of eyes.",
+  },
+  {
+    title: "EMDR Consultation & Certification",
+    body: "Consultation hours toward EMDR certification, with support through the full certification process.",
+  },
+];
 
 export function ServicesDirectory() {
-  const [activeId, setActiveId] = useState(serviceCategories[0].id);
-  const active = serviceCategories.find((c) => c.id === activeId)!;
-
   return (
-    <div>
-      <div className="flex flex-wrap justify-center gap-2.5">
-        {serviceCategories.map((cat) => {
-          const isActive = cat.id === activeId;
-          return (
-            <button
-              key={cat.id}
-              id={cat.id}
-              onClick={() => setActiveId(cat.id)}
-              className="scroll-mt-24 rounded-full border px-5 py-2.5 text-sm font-medium transition-colors"
-              style={
-                isActive
-                  ? { backgroundColor: "var(--cw-teal-700)", borderColor: "var(--cw-teal-700)", color: "#fff" }
-                  : { borderColor: "var(--cw-line)", color: "var(--cw-ink-soft)" }
-              }
-            >
-              {cat.label}
-            </button>
-          );
-        })}
-      </div>
+    <div className="space-y-24">
+      <div>
+        <div className="mx-auto max-w-2xl text-center">
+          <p
+            className="cw-font-body text-xs uppercase tracking-[0.2em]"
+            style={{ color: "var(--cw-teal-600)" }}
+          >
+            Types of Therapy
+          </p>
+          <h2
+            className="cw-font-display mt-4 text-3xl leading-[1.15] sm:text-4xl"
+            style={{ color: "var(--cw-ink)" }}
+          >
+            Approaches we&rsquo;re trained in
+          </h2>
+        </div>
 
-      <div className="mt-14 text-center">
-        <h2 className="cw-font-display text-3xl sm:text-4xl" style={{ color: "var(--cw-ink)" }}>
-          {active.heading}
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed" style={{ color: "var(--cw-ink-soft)" }}>
-          {active.intro}
-        </p>
-      </div>
-
-      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {active.items.map((item, i) => {
-          const Icon = item.icon;
-          const accent = accents[i % accents.length];
-          return (
-            <div
-              key={item.title}
-              className="rounded-3xl border bg-white p-6 transition-transform duration-300 hover:-translate-y-1"
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {therapyCards.map((card) => (
+            <article
+              key={card.slug}
+              id={card.slug}
+              className="scroll-mt-32 overflow-hidden rounded-2xl border bg-white"
               style={{ borderColor: "var(--cw-line)" }}
             >
-              <div
-                className="flex h-12 w-12 items-center justify-center rounded-2xl"
-                style={{ backgroundColor: `color-mix(in srgb, ${accent} 14%, white)` }}
-              >
-                <Icon className="h-6 w-6" style={{ color: accent }} />
+              <div className="relative h-44">
+                <Image
+                  src={unsplash(card.photo, "w=700&q=80&auto=format&fit=crop")}
+                  alt=""
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
               </div>
-              <h3 className="cw-font-display mt-5 text-lg" style={{ color: "var(--cw-ink)" }}>
+              <div className="p-6">
+                <p
+                  className="cw-font-body text-[0.7rem] uppercase tracking-widest"
+                  style={{ color: "var(--cw-teal-600)" }}
+                >
+                  {card.kicker}
+                </p>
+                <h3 className="cw-font-display mt-2 text-xl" style={{ color: "var(--cw-ink)" }}>
+                  {card.title}
+                </h3>
+                <p
+                  className="cw-font-body mt-2.5 text-sm leading-relaxed"
+                  style={{ color: "var(--cw-ink-soft)" }}
+                >
+                  {card.body}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div id="what-we-treat" className="scroll-mt-32">
+        <div className="mx-auto max-w-2xl text-center">
+          <p
+            className="cw-font-body text-xs uppercase tracking-[0.2em]"
+            style={{ color: "var(--cw-teal-600)" }}
+          >
+            What We Treat
+          </p>
+          <h2
+            className="cw-font-display mt-4 text-3xl leading-[1.15] sm:text-4xl"
+            style={{ color: "var(--cw-ink)" }}
+          >
+            Whatever brought you here, there&rsquo;s a place to start
+          </h2>
+        </div>
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          {treats.map((item) => (
+            <span
+              key={item}
+              className="cw-font-body rounded-full px-5 py-2.5 text-sm"
+              style={{ backgroundColor: "var(--cw-mist)", color: "var(--cw-ink)" }}
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div id="supervision" className="scroll-mt-32">
+        <div className="mx-auto max-w-2xl text-center">
+          <p
+            className="cw-font-body text-xs uppercase tracking-[0.2em]"
+            style={{ color: "var(--cw-teal-600)" }}
+          >
+            For Clinicians
+          </p>
+          <h2
+            className="cw-font-display mt-4 text-3xl leading-[1.15] sm:text-4xl"
+            style={{ color: "var(--cw-ink)" }}
+          >
+            Supervision and Consultation
+          </h2>
+        </div>
+        <div className="mx-auto mt-10 grid max-w-4xl gap-5 sm:grid-cols-2">
+          {supervision.map((item) => (
+            <div
+              key={item.title}
+              className="rounded-2xl border bg-white p-7"
+              style={{ borderColor: "var(--cw-line)" }}
+            >
+              <h3 className="cw-font-display text-xl" style={{ color: "var(--cw-ink)" }}>
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--cw-ink-soft)" }}>
-                {item.description}
+              <p
+                className="cw-font-body mt-2.5 text-sm leading-relaxed"
+                style={{ color: "var(--cw-ink-soft)" }}
+              >
+                {item.body}
               </p>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

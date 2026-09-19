@@ -1,30 +1,40 @@
-import { Phone, Mail, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MessageSquare } from "lucide-react";
 import { CWButton } from "@/components/coastal-wellness/button";
+import { site } from "@/lib/coastal-wellness/site";
 
 const steps = [
-  { step: "01", title: "Reach out", body: "Call, email, or send a request — a real person responds within one business day." },
-  { step: "02", title: "Free consult", body: "A brief call to understand what you need and match you with the right clinician." },
-  { step: "03", title: "First session", body: "Meet in person or by telehealth and start building a plan that actually fits your life." },
+  {
+    step: "01",
+    title: "Reach out",
+    body: `Call ${site.phone}, text ${site.text}, or schedule online through our client portal.`,
+  },
+  {
+    step: "02",
+    title: "Get matched",
+    body: "We'll talk through what you're looking for and pair you with the right clinician and approach.",
+  },
+  {
+    step: "03",
+    title: "First session",
+    body: "Meet at either Melbourne office or by telehealth, and start building a plan that fits your life.",
+  },
 ];
 
 export function CWCtaContact() {
   return (
-    <section id="contact" className="mx-auto max-w-7xl scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8">
+    <section id="contact" className="mx-auto max-w-6xl scroll-mt-28 px-6 py-20 sm:px-10">
       <div
-        className="cw-grain relative overflow-hidden rounded-[2.5rem] px-8 py-16 sm:px-14"
+        className="cw-grain relative overflow-hidden rounded-[2rem] px-8 py-16 sm:px-14"
         style={{ background: "linear-gradient(150deg, var(--cw-teal-900), var(--cw-teal-600) 130%)" }}
       >
-        <div
-          className="cw-blob cw-float-slow absolute -right-20 -top-20 h-72 w-72"
-          style={{ background: "var(--cw-coral)", opacity: 0.3 }}
-        />
         <div className="relative">
           <div className="max-w-2xl">
-            <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-turquoise)" }}>
+            <p className="cw-font-body text-xs uppercase tracking-[0.2em]" style={{ color: "var(--cw-turquoise)" }}>
               Get Started
-            </span>
-            <h2 className="cw-font-display mt-3 text-4xl text-white sm:text-5xl">
-              The hardest part is reaching out. We&rsquo;ll take it from there.
+            </p>
+            <h2 className="cw-font-display mt-4 text-3xl leading-[1.15] text-white sm:text-[2.6rem]">
+              The hardest part is reaching out.{" "}
+              <span className="italic">We&rsquo;ll take it from there.</span>
             </h2>
           </div>
 
@@ -35,26 +45,30 @@ export function CWCtaContact() {
                   {s.step}
                 </span>
                 <h3 className="cw-font-display mt-2 text-xl text-white">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/65">{s.body}</p>
+                <p className="cw-font-body mt-2 text-sm leading-relaxed text-white/70">{s.body}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-white/10 pt-8">
-            <CWButton href="tel:+13215551234" size="lg">
+          <div className="mt-12 flex flex-wrap items-center gap-3 border-t border-white/10 pt-8">
+            <CWButton href={site.portal} external size="lg" variant="light">
+              Schedule Today
+            </CWButton>
+            <CWButton href={site.phoneHref} variant="outline-light" size="lg">
               <Phone className="h-4 w-4" />
-              (321) 555-1234
+              {site.phone}
             </CWButton>
-            <CWButton href="mailto:hello@coastalwellness.net" variant="outline-light" size="lg">
+            <CWButton href={site.textHref} variant="outline-light" size="lg">
+              <MessageSquare className="h-4 w-4" />
+              Text {site.text}
+            </CWButton>
+            <a
+              href={`mailto:${site.email}`}
+              className="cw-font-body inline-flex items-center gap-2 text-sm text-white/75 transition-colors hover:text-white"
+            >
               <Mail className="h-4 w-4" />
-              hello@coastalwellness.net
-            </CWButton>
-            <span className="ml-auto inline-flex items-center gap-1.5 text-sm font-medium text-white/70">
-              or explore our clinicians
-              <a href="/team" className="inline-flex items-center gap-1 text-white hover:underline">
-                Meet the Team <ArrowUpRight className="h-3.5 w-3.5" />
-              </a>
-            </span>
+              {site.email}
+            </a>
           </div>
         </div>
       </div>

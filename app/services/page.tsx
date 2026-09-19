@@ -3,11 +3,12 @@ import { CWNavbar } from "@/components/coastal-wellness/navbar";
 import { CWFooter } from "@/components/coastal-wellness/footer";
 import { CWButton } from "@/components/coastal-wellness/button";
 import { ServicesDirectory } from "@/components/coastal-wellness/services-directory";
+import { site } from "@/lib/coastal-wellness/site";
 
 export const metadata: Metadata = {
-  title: "Services & Specialties",
+  title: "Types of Therapy",
   description:
-    "Explore Coastal Wellness's full range of therapy services — populations served, areas treated, treatment approaches and ways to connect.",
+    "EMDR, child therapy, ART and music therapy, vibroacoustic therapy and virtual reality exposure therapy at Coastal Wellness in Melbourne, FL.",
 };
 
 export default function ServicesPage() {
@@ -15,32 +16,41 @@ export default function ServicesPage() {
     <>
       <CWNavbar />
       <main>
-        <section className="cw-grain relative overflow-hidden pt-36 pb-20">
+        <section className="cw-grain relative overflow-hidden pt-36 pb-16">
           <div
-            className="cw-blob-2 cw-float absolute -left-32 -top-24 h-96 w-96"
-            style={{ background: "var(--cw-coral-soft)", opacity: 0.5 }}
+            className="cw-blob-2 cw-float absolute -left-48 -top-48 h-[460px] w-[460px]"
+            style={{ background: "var(--cw-turquoise)", opacity: 0.16 }}
           />
-          <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
-              Services & Specialties
-            </span>
-            <h1 className="cw-font-display mt-4 text-4xl sm:text-6xl" style={{ color: "var(--cw-ink)" }}>
-              Whatever brought you here, there&rsquo;s a place to start.
+          <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-10">
+            <p
+              className="cw-font-body text-xs uppercase tracking-[0.2em]"
+              style={{ color: "var(--cw-teal-600)" }}
+            >
+              Types of Therapy
+            </p>
+            <h1
+              className="cw-font-display mt-5 text-4xl leading-[1.1] sm:text-6xl"
+              style={{ color: "var(--cw-ink)" }}
+            >
+              Advanced therapy, <span className="italic">delivered with care.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed" style={{ color: "var(--cw-ink-soft)" }}>
-              Browse by who we help, what we treat, how we treat it, or how
-              you&rsquo;d like to connect — our team covers a wide range so you
-              don&rsquo;t have to guess.
+            <p
+              className="cw-font-body mx-auto mt-6 max-w-2xl text-lg leading-relaxed"
+              style={{ color: "var(--cw-ink-soft)" }}
+            >
+              We specialize in EMDR and intensives, and offer child therapy,
+              expressive therapies and alternative approaches — in person at
+              either Melbourne office or by telehealth.
             </p>
             <div className="mt-8">
-              <CWButton href="/#contact" size="lg">
-                Request an Appointment
+              <CWButton href={site.portal} external size="lg">
+                Schedule Today
               </CWButton>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-6xl px-6 pb-24 sm:px-10">
           <ServicesDirectory />
         </section>
       </main>
