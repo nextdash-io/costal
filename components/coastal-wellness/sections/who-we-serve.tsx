@@ -2,7 +2,7 @@ import { treats } from "@/lib/coastal-wellness/site";
 
 export function CWWhoWeServe() {
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-2 sm:px-10">
+    <section className="mx-auto max-w-6xl px-6 pb-16 sm:px-10">
       <div className="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:gap-12">
         <p
           className="cw-font-body shrink-0 text-xs uppercase tracking-[0.2em]"

@@ -116,7 +116,6 @@ export const treats = [
   "Grief & Loss",
   "Life Transitions",
   "Relationship Issues",
-  "Self-Esteem",
 ];
 
 export const quickLinks = [

@@ -8,49 +8,68 @@ export function CWTeamPreview() {
   const featured = clinicians.slice(0, 6);
 
   return (
-    <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+    <section className="mx-auto max-w-6xl px-6 py-20 sm:px-10">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <div className="max-w-xl">
-          <span className="text-xs font-medium uppercase tracking-widest" style={{ color: "var(--cw-coral)" }}>
+          <p
+            className="cw-font-body text-xs uppercase tracking-[0.2em]"
+            style={{ color: "var(--cw-teal-600)" }}
+          >
             Meet Our Team
-          </span>
-          <h2 className="cw-font-display mt-3 text-4xl sm:text-5xl" style={{ color: "var(--cw-ink)" }}>
-            17 clinicians. One shared standard of care.
+          </p>
+          <h2
+            className="cw-font-display mt-4 text-3xl leading-[1.15] sm:text-4xl"
+            style={{ color: "var(--cw-ink)" }}
+          >
+            {clinicians.length} clinicians.{" "}
+            <span className="italic">One shared standard of care.</span>
           </h2>
         </div>
-        <CWButton href="/team" variant="outline" size="md" className="shrink-0">
+        <CWButton href="/team" variant="outline" className="shrink-0">
           Meet the Full Team
           <ArrowUpRight className="h-4 w-4" />
         </CWButton>
       </div>
 
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {featured.map((c) => (
-          <div
+          <a
             key={c.id}
-            className="flex items-center gap-4 rounded-3xl border bg-white p-5"
+            href="/team"
+            className="group flex items-center gap-4 rounded-2xl border bg-white p-4 transition-shadow duration-300 hover:shadow-[0_18px_40px_-26px_rgba(1,49,38,0.45)]"
             style={{ borderColor: "var(--cw-line)" }}
           >
-            <Image
-              src={unsplash(c.photo, "w=160&q=75&auto=format&fit=crop")}
-              alt={c.name}
-              width={64}
-              height={64}
-              unoptimized
-              className="h-16 w-16 shrink-0 rounded-2xl object-cover"
-            />
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+              <Image
+                src={unsplash(c.photo, "w=200&q=80&auto=format&fit=crop&crop=faces")}
+                alt={c.name}
+                fill
+                unoptimized
+                sizes="64px"
+                className="object-cover object-top"
+              />
+            </div>
             <div className="min-w-0">
-              <p className="cw-font-display truncate text-lg" style={{ color: "var(--cw-ink)" }}>
+              <p
+                className="cw-font-display truncate text-lg leading-tight"
+                style={{ color: "var(--cw-ink)" }}
+              >
                 {c.name}
               </p>
-              <p className="text-xs font-medium" style={{ color: "var(--cw-teal-700)" }}>
+              <p
+                className="cw-font-body mt-0.5 truncate text-xs"
+                style={{ color: "var(--cw-teal-700)" }}
+              >
                 {c.credentials}
               </p>
-              <p className="mt-1 truncate text-xs" style={{ color: "var(--cw-ink-soft)" }}>
-                {c.specialties[0]}
+              <p
+                className="cw-font-body mt-1 truncate text-xs"
+                style={{ color: "var(--cw-ink-soft)" }}
+              >
+                {c.focus[0]}
               </p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

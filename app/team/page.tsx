@@ -8,7 +8,7 @@ import { site } from "@/lib/coastal-wellness/site";
 export const metadata: Metadata = {
   title: "Meet Our Team",
   description:
-    "Meet the 17 licensed clinicians at Coastal Wellness, serving children, teens, adults, couples and families across Brevard County and by telehealth.",
+    "Meet the clinicians and office staff at Coastal Wellness & Life Coaching Center in Melbourne, FL — serving children, teens, adults, couples and families in person and by telehealth.",
 };
 
 export default function TeamPage() {
@@ -32,15 +32,22 @@ export default function TeamPage() {
               className="cw-font-display mt-5 text-4xl leading-[1.1] sm:text-6xl"
               style={{ color: "var(--cw-ink)" }}
             >
-              17 clinicians. <span className="italic">17 reasons to feel understood.</span>
+              Professional counseling{" "}
+              <span className="italic">and life coaching.</span>
             </h1>
             <p
               className="cw-font-body mx-auto mt-6 max-w-2xl text-lg leading-relaxed"
               style={{ color: "var(--cw-ink-soft)" }}
             >
-              Every therapist at Coastal Wellness brings their own training,
-              perspective and specialty — filter below to find the person
-              who&rsquo;s right for you.
+              Our professional and caring staff brings decades of therapy,
+              wellness and life coaching experience to the Melbourne, FL area.
+              Our main goal is to provide the support that makes a difference.
+            </p>
+            <p
+              className="cw-font-body mx-auto mt-4 max-w-2xl text-sm"
+              style={{ color: "var(--cw-ink-soft)" }}
+            >
+              Filter below to find the clinician who&rsquo;s right for you.
             </p>
             <div className="mt-8">
               <CWButton href={site.portal} external size="lg">

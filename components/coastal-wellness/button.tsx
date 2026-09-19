@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type Common = {
   variant?: "primary" | "outline" | "outline-light" | "light" | "ghost";
-  size?: "md" | "lg";
+  size?: "sm" | "md" | "lg";
   className?: string;
   children: React.ReactNode;
 };
@@ -22,6 +22,7 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 whitespace-nowrap";
 
 const sizes = {
+  sm: "h-9 px-4 text-[0.8rem]",
   md: "h-11 px-5 text-sm",
   lg: "h-14 px-7 text-base",
 };
